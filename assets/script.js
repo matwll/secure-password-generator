@@ -18,6 +18,10 @@ function generatePassword() {
 }
 
 //object containing the initial type possibilities
+let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let specialCharacters = [];
+
 let generatedPassword = {
   characters: 8,
   number: true,
@@ -26,10 +30,48 @@ let generatedPassword = {
   lowercase: true,
 }
 
-
-//user prompts to set values of the object for password requirements
+//user prompt/confrims to set values of the object for password requirements
 generatedPassword.characters = prompt("Choose a length for password. \n Between 8 -128 characters.");
 generatedPassword.number = confirm('Do you want numbers included?');
-generatedPassword.specialCharacter = confirm('Do you want special characters included? \n i.e.');
+generatedPassword.specialCharacter = confirm('Do you want special characters included?');
 generatedPassword.capitol = confirm('Do you want uppercase letters included?');
 generatedPassword.lowercase = confirm('Do you want lowercase letters included?');
+
+//check values entered into generatedPassword
+if (generatedPassword.characters >= 8 && generatedPassword.characters <= 128){
+
+}else {
+ 
+};
+
+if (generatedPassword.number){
+  
+}else {
+  
+}
+
+if (generatedPassword.specialCharacter){
+  
+}else {
+  
+}
+
+if (generatedPassword.capitol){
+  
+}else {
+  
+}
+
+if (generatedPassword.lowercase){
+  
+}else {
+  
+}
+
+
+//for loop to randomize each character in the total length of password that was selected
+for (let i = 0; i <= generatedPassword.characters; i++){
+
+}
+
+console.log(generatedPassword);
