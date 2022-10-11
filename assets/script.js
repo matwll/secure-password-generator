@@ -39,39 +39,32 @@ generatedPassword.lowercase = confirm('Do you want lowercase letters included?')
 
 //check values entered into generatedPassword
 if (generatedPassword.characters >= 8 && generatedPassword.characters <= 128){
-
-}else {
- 
-};
+  let newArray = [];
+}
 
 if (generatedPassword.number){
-  
-}else {
   
 }
 
 if (generatedPassword.specialCharacter){
   
-}else {
-  
 }
 
 if (generatedPassword.capitol){
   
-}else {
-  
 }
 
 if (generatedPassword.lowercase){
-  
-}else {
   
 }
 
 
 //for loop to randomize each character in the total length of password that was selected
 for (let i = 0; i <= generatedPassword.characters; i++){
-
+  
 }
+
+
+//validate the requirements selected are met by generated password.
 
 console.log(generatedPassword);
