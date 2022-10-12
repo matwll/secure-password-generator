@@ -15,12 +15,15 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   /////////////////////////// WRITE YOUR CODE HERE /////////////////////////
-}
+
 
 //object containing the initial type possibilities
 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let specialCharacters = [];
+
+let possibleChoices = [];
+let finalPassword = [];
 
 let generatedPassword = {
   characters: 8,
@@ -38,8 +41,9 @@ generatedPassword.capitol = confirm('Do you want uppercase letters included?');
 generatedPassword.lowercase = confirm('Do you want lowercase letters included?');
 
 //check values entered into generatedPassword
-if (generatedPassword.characters >= 8 && generatedPassword.characters <= 128){
-  let newArray = [];
+if (!generatedPassword.characters >= 8 && !generatedPassword.characters <= 128){
+  alert("Please choose a valid number of characters.");
+  generatedPassword.characters = prompt("Choose a length for password. \n Between 8 -128 characters.");
 }
 
 if (generatedPassword.number){
@@ -58,13 +62,18 @@ if (generatedPassword.lowercase){
   
 }
 
+if (!generatedPassword.number || !generatedPassword.specialCharacter || !generatedPassword.capitol || !generatedPassword.lowercase){
+
+}
 
 //for loop to randomize each character in the total length of password that was selected
 for (let i = 0; i <= generatedPassword.characters; i++){
-  
+  finalPassword.push (possibleChoices[Math.floor(Math.random () * possibleChoices.length)])
 }
 
 
 //validate the requirements selected are met by generated password.
 
 console.log(generatedPassword);
+
+}
