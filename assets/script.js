@@ -4,9 +4,9 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  // passwordText.value = password;
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
@@ -22,9 +22,9 @@ let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 let alphabetUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 let specialCharacters = ['@', '#', '!', '$', '%', '&', '/', '~'];
 
+//arrays to store the randomized values selected
 let possibleChoices = [];
 let finalPassword = [];
-passwordText = finalPassword.toString();
 
 let generatedPassword = {
   characters: 8,
@@ -36,23 +36,20 @@ let generatedPassword = {
 
 //user prompt/confrims to set values of the object for password requirements
 generatedPassword.characters = prompt("Choose a length for password. \n Between 8 -128 characters.");
+if (generatedPassword.characters < 8 || generatedPassword.characters > 128){
+  alert("Please choose a valid number of characters.");
+  generatedPassword.characters = prompt("Choose a length for password. \n Between 8 -128 characters.");
+}
 generatedPassword.number = confirm('Do you want numbers included?');
 generatedPassword.specialCharacter = confirm('Do you want special characters included?');
 generatedPassword.capitol = confirm('Do you want uppercase letters included?');
 generatedPassword.lowercase = confirm('Do you want lowercase letters included?');
 
-//check values entered into generatedPassword
-
-
-if (!generatedPassword.characters >= 8 && !generatedPassword.characters <= 128){
-  alert("Please choose a valid number of characters.");
-  generatedPassword.characters = prompt("Choose a length for password. \n Between 8 -128 characters.");
-}
-
-if (!generatedPassword.number || !generatedPassword.specialCharacter || !generatedPassword.capitol || !generatedPassword.lowercase){
+if (generatedPassword.numbers && generatedPassword.specialCharacter && generatedPassword.capitol && generatedPassword.lowercase){
   return null;
 }
 
+//check values entered into generatedPassword
 for (let i = 0; i < 5; i++){
   if (generatedPassword.number){
     possibleChoices.push (numbers[Math.floor(Math.random() * numbers.length)]);
@@ -84,4 +81,7 @@ for (let i = 0; i < generatedPassword.characters; i++){
 console.log(generatedPassword);
 console.log(possibleChoices);
 console.log(finalPassword);
+
+let stringPassword = finalPassword.join('');
+return stringPassword;
 }
