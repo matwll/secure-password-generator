@@ -13,10 +13,10 @@ N/A
 
 To use this application:
 
-Open the webpage located here (https://matwll.github.io/secure-password-generator/)
-Click the Generate Password button
-Proceed through the prompts
-The password will be displayed in the box as text so you can copy it
+Open the webpage located here (https://matwll.github.io/secure-password-generator/). 
+Click the Generate Password button. 
+Proceed through the prompts. 
+The password will be displayed in the box as text so you can copy it.
 
 <img src="./assets/images/password-generator.png" alt="Password-Generator-Screenshot">
 
